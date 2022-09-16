@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int i;
+	scanf_s("%d\n ", &i);
+	if (i % 2 == 0)
+	{
+		printf("为偶数");
+
+	}
+	else
+	{
+		printf("为奇数");
+	}
+	return 0;
+	
+
+
+
+
+
+
+}
