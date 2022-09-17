@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main()
+
+{
+	int ch = 0;
+	int rat = 0;
+	char password[20] = { 0 };
+	printf("请输入密码:");
+	scanf_s("%s", password,20);//读取密码到password中 注意这个20
+	//缓冲区还有/n
+	//用getchar带走
+	while ((ch = getchar()) != '\n')
+	{
+		;
+	}
+	printf("请确认(Y/N):");
+	rat = getchar();
+	if (rat == 'Y')
+	{
+		printf("确认成功\n");
+
+	}
+	else
+	{
+		printf("确认放弃\n");
+
+
+	}
+
+
+	return 0;
+}
