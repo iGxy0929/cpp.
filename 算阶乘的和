@@ -18,3 +18,20 @@ int main()
 	printf("sum=%d\n", sum);
 	return 0;
 }
+//更简单的如下
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int  ret = 1;
+	int sum = 0;
+	for (n = 1; n <= 3; n++)
+	{
+
+		ret = ret * n;
+		sum += ret;
+	}
+
+	printf("%d\n",sum);
+		return 0;
+}
