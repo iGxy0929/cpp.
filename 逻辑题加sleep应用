@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<windows.h>
+int main()
+{
+		int a = 0;
+		int b = 0;
+		printf("现有两桶水\na桶七升，b桶四升\n经过一系列操作最终得到五升水：");
+		a = 7;
+		b = 4;
+		a = 3;
+		printf("a桶先灌满水再将水倒入b中\n");
+		printf("此时a=%db=%d\n",a,b);
+		Sleep(1000);
+		b = 0;
+		b = a;
+		a = 0;
+		printf("把b倒完，把a的全部倒给b\n");
+		printf("此时a=%db=%d\n", a, b);
+		Sleep(1000);
+		a = 7;
+		b = 4;
+		a = 6;
+		printf("把a加满，把a到给b\n");
+		printf("此时a=%db=%d\n", a, b);
+		Sleep(1000);
+		b = 0;
+		b = 4;
+		a = 2;
+		printf("把b倒掉，把a倒给b\n");
+		printf("此时a=%db=%d\n", a, b);
+		Sleep(1000);
+		b = 0;
+		b = 2;
+		a = 7;
+		printf("把b倒掉，把a倒给b，把a加满\n");
+		printf("此时a=%db=%d\n", a, b);
+		Sleep(1000);
+		a = 5;
+		b = 4;
+		b = 0;
+		printf("把a到给b，把b倒掉\n");
+		printf("此时a=%db=%d\n", a, b);
+		Sleep(1000);
+		printf("这样就得到了5L水");
+
+	return 0;
+}
