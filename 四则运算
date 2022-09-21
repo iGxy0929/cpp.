@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	double a = 0;
+	double b = 0;
+	double c = 0;
+	printf("四则运算\n");
+	printf("请选择运算符号\n 1加法\n 2减法\n 3乘法\n 4除法\n 5退出\n");
+	scanf_s("%d", &i);
+	printf("请输入两个数（可以是小数）\n");
+	scanf_s("%lf%lf", &a, &b);
+	
+	switch(i)
+		case 1:
+	{
+		c = a + b;
+		printf("%lf\n", c);
+		break;
+
+		case 2:
+			c = a - b;
+			printf("%lf\n", c);
+			break;
+		case 3:
+			c = a * b;
+			printf("%lf\n", c);
+			break;
+		case 4:
+			c = a / b;
+			printf("%lf\n", c);
+			break;
+
+}
+	return 0;
+}
