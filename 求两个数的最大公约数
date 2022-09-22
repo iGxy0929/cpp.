@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	printf("请输入两个数：");
+	int m ;
+	int n ;
+	int r ;
+	scanf_s("%d%d", &m ,& n);
+	while (r = m % n)
+	{
+		m = n;
+		n = r;
+	}
+	printf("%d\n", n);
+
+	return 0;
+}
