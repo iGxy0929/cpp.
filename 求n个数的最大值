@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	int k;
+	float a, max;
+	max = 0;
+	printf("请输入数字的个数：");
+	scanf_s("%d", &n);
+	printf("请输入%d个数字", n);
+	for(k=0;k<n;k++)
+{
+		scanf_s("%f", &a);
+		if (a > max)
+			max = a;
+	}
+	printf("最大值为：%f", max);
+	
+
+	return 0;
+}
