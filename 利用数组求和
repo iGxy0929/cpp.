@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	int a[n];
+	int sum = 0;
+	printf("请输入整数的个数：");
+	scanf_s("%d", &n);
+	for (int i = 0; i <n; i++)
+	{
+		printf("a[%d]", i);
+		scanf_s("%d", &a[i]);
+		sum += a[i];
+	
+
+	}
+		printf("sum=%d",sum);
+
+
+	return 0;
+}
