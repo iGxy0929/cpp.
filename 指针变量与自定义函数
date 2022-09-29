@@ -1,0 +1,17 @@
+#include<stdio.h>
+void Swap(int* px, int* py)
+{
+	int tmp = 0;
+	tmp = *px;
+	*px = *py;
+	*py = tmp;
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	printf("%d\t%d\n", a, b);
+	Swap(&a, &b);
+	printf("%d\t%d", a, b);
+	return 0;
+}
