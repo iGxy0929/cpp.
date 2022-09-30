@@ -1,0 +1,17 @@
+#include<stdio.h>
+int get_Max(int x, int y)
+{
+	if (x > y)
+		return x;
+	else
+		return y;
+}
+int main()
+{
+	int a, b;
+	scanf_s("%d%d", &a, & b);
+	int Max=get_Max(a, b);
+	printf("%d",Max);
+	
+	return 0;
+}
