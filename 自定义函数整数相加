@@ -1,0 +1,24 @@
+#include<stdio.h>
+int sum(int b[],int x)
+{	
+	int m=0;
+	for(int i=0;i<x;i++)
+	m+=b[i];
+	return m;
+}
+int main()
+{	
+	int n;
+	int a[n];
+	
+	printf("请输入整数的个数：");
+	scanf("%d",&n);
+	for(int j=0;j<n;j++){
+		scanf("%d",&a[j]);
+	}
+	
+	int y=sum(a,n);
+	printf("%d",y);
+				
+	return 0;
+}
