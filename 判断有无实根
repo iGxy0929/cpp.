@@ -1,0 +1,23 @@
+#include<stdio.h>
+int judge(int x,int y,int z)
+{
+	int rs=0;
+	rs=y*y-4*x*z;
+	if(rs<0)
+	return 0;
+	else
+	return 1;				
+}
+int main()
+{
+	int a,b,c;
+
+	printf("请输入二次方程的三个参量：");
+	scanf("%d%d%d",&a,&b,&c);
+	int sum=judge(a,b,c);
+	printf("%d",sum);
+
+		
+	
+	return 0;
+}
