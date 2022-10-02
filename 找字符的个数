@@ -1,0 +1,27 @@
+#include<stdio.h>
+int count(char b[],char c)
+{
+	int x=0;
+	for(int j=0;b[j]!=0;j++)
+	{
+		if(b[j]==c)
+		x++;
+	}
+	return x;	
+}
+int main()
+{	
+	int n=0;
+	char a[n];
+	int m=0;
+	char l;
+	printf("请输入字符串的长度：\n");
+	scanf("%d",&n);
+	printf("请输入%d个字符",n);
+	getchar();
+	 gets(a);
+	m=count(a,'d');
+	printf("字符d的个数为：%d",m);
+		
+	return 0;
+}
