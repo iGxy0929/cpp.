@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+int Kevin_Durant(int a,int b,int c)
+{
+	int p=(a+b+c)/2;
+	int n=p-a;
+	int m=p-b;
+	int l=p-c;
+	int curry=p*n*m*l;
+	int james=sqrt(curry);
+	return james;
+	
+	
+}
+
+int main()
+{	
+	int a,b,c;
+	printf("请输入三角形的三条边长：\n");
+	scanf("%d%d%d",&a,&b,&c);
+	int s=Kevin_Durant(a,b,c);
+	printf("%d",s);
+		
+	return 0;
+}
