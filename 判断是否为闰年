@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+
+int leap_year(int a)
+{
+	if(a%4==0&&a%100!=0||a%400==0)
+	return 1;
+	else
+	return 0;
+	
+}
+int main()
+{
+	int a=0;
+	printf("请输入需要判断的年份：");
+	printf("1表示为闰年，0表示非闰年\n");
+		scanf("%d",&a);
+	int b=leap_year(a);
+	printf("%d",b);
+		
+	return 0;
+}
