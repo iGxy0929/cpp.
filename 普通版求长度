@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	char arr[]="abcaskdjasl";
+		int count =0;
+	for(int i=0;arr[i]!='\0';i++)
+	{
+	count++;
+	}
+	printf("%d",count);
+	
+	
+	
+	return 0;
+}
