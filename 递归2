@@ -1,0 +1,18 @@
+#include<stdio.h>
+int my_strlen(char* arr)
+{
+	if(* arr!='\0')
+	 return 1+my_strlen(arr+1);//str表示地址地址加一则是下一个字符
+	  else
+	  return 0;
+	  
+	
+}
+int main()
+{
+	char a[]="abcd";
+	int len=my_strlen(a);
+	printf("长度为%d",len);
+	
+	return 0;
+}
