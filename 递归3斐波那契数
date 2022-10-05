@@ -1,0 +1,20 @@
+#include<stdio.h>
+int Durant(int n)
+{
+	if(n<=2)
+	return 1;
+	else
+	return Durant(n-1)+Durant(n-2);
+	
+	
+}
+int main()
+{
+	int n=0;
+	printf("请输入第几个数：");
+	scanf("%d",&n);
+	int q=Durant(n);
+	printf("%d",q);
+	
+	return 0;
+}
