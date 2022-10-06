@@ -19,3 +19,26 @@ int main()
 
 	return 0;
 }
+#include<stdio.h>
+int main()
+{	
+	int n=0;
+	int a[n];
+	printf("请输入整数的个数：");
+	scanf("%d",&n);
+	printf("请输入%d个整数",n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		
+	}
+	int max=a[0];
+	for(int j=0;j<n;j++)
+	{
+		if(a[j]>max)
+		max=a[j];
+	}
+	printf("最大值为%d",max);
+	
+	return 0;
+} 
