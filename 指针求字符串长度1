@@ -1,0 +1,18 @@
+#include<stdio.h>
+int my_strlen(char*a)
+{
+	int count=0;
+	while(*a!='\0')
+	{
+		count ++;
+		a++;
+	}
+	return count;
+}
+int main()
+{
+	char a[]="abc";
+	int len=my_strlen(a);
+	printf("%d",len);
+	return 0;
+}
