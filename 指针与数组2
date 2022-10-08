@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int a[]={1,2,3,4,5};
+	int b[]={3,4,5,6,7};
+	int c[]={4,5,6,7,8};
+	int* arr[3]={a,b,c};//a代表1的地址b代表3的地址c代表4的地址 
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<5;j++)
+		{
+				//arri表示第几个地址加j即下一个地址 
+					printf("%d",*(arr[i]+j)); 
+		}
+	printf("\n");
+	}
+	
+	return 0;
+}
