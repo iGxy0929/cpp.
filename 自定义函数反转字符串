@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+void reverse(char *a)
+{
+	int len=strlen(a);
+	char *left=a;
+	char *right=a+len-1;
+	while(left<=right)
+	{
+		char tmp=*left;
+		*left=*right;
+		*right=tmp;
+		left++;
+		right--;
+		
+		
+	}
+	
+	
+}
+int main()
+{	
+	int n=0;
+	printf("请输入字符串长度：");
+	scanf("%d",&n);
+	char arr[n];//不可以char*因为会是常量字符串无法变换
+	getchar();
+	printf("请输入字符串：");
+	gets(arr);
+	reverse(arr);
+	printf("%s",arr);
+	return 0;
+}
