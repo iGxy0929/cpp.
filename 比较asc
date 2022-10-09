@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{	
+	int n=0;
+
+	printf("请输入字符串的长度:\n");
+	scanf("%d",&n);
+		char arr[n];
+			printf("请输入字符串：");
+	
+	getchar();
+	gets(arr);
+	int  Ascii_max;
+		Ascii_max=*arr;
+	for(int i=0;i<n;i++)
+	{
+	
+		if(arr[i]>Ascii_max)
+		Ascii_max=arr[i];	 
+	}
+	printf("%c",Ascii_max);
+	
+	return 0;
+}
