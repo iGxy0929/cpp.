@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<string.h>
+
+int total(char*a,int n)
+{
+	int sum=0;
+	for(int i=0;i<n;i++)
+	{
+		sum+=a[i]-48;
+		
+	}
+	return sum;
+}
+int main()
+{
+	char a[100];
+	scanf("%s",a);
+	int q=strlen(a);
+	int sum=total(a,q);
+	int num=1;
+	while(sum/10)
+	{
+		num++;
+		sum/=10;
+	}
+	sum=total(a,q);
+	
+	//printf("%d",sum);
+	int k=0;
+		int arr[k];
+		while(sum!=0)
+		{
+			arr[k]=sum%10;
+			k++;
+			sum/=10;
+			
+		}
+	
+	for(int j=k-1;j>=0;j--)
+	{
+		
+		if(arr[j]==0)
+		{
+		printf("ling");
+		}
+		if(arr[j]==1)
+{
+		printf("yi");
+}		if(arr[j]==2)
+{
+		printf("er");
+}
+		if(arr[j]==3)
+{
+		printf("san");
+}
+		if(arr[j]==4)	
+{
+		printf("si");
+}
+		if(arr[j]==5)
+{
+		printf("wu");
+}
+		if(arr[j]==6)
+{
+		printf("liu");
+}
+		if(arr[j]==7)
+{
+		printf("qi");
+}
+		if(arr[j]==8)
+{
+		printf("ba");
+}
+		if(arr[j]==9)
+{
+		printf("jiu");
+}
+		if(arr[j]!=0)
+		printf(" ");
+	}
+	return 0;
+}
