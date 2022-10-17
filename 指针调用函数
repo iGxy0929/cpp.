@@ -35,7 +35,7 @@ int main()
 	printf("请输入两个操作数>:");
 	scanf("%d %d",&x,&y);
 	ret=(p[input])(x,y);
-	printf("%d",ret);
+	printf("%d",ret);//*P不*p无所谓*/
 	
 	return 0;
 }
