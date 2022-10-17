@@ -1,0 +1,41 @@
+#include<stdio.h>
+void menu()
+{
+	printf("********请选择：********\n");
+	printf("*****1.加法  2.减法*****\n");
+	printf("*****3.乘法  4.除法*****\n");
+	printf("************************\n");	
+	printf("************************\n");	
+}
+int Add(int x,int y)
+{
+	return x+y;
+}
+int Sub(int x,int y)
+{
+	return x-y;
+}
+int mul(int x,int y)
+{
+	return x*y;
+}
+int div(int x,int y)
+{
+	return x/y;
+}
+int main()
+{	
+	menu();
+	int x=0;
+	int y=0;
+	int input =0;
+	int ret =0;
+	scanf("%d",&input);
+	int (*p[5])(int,int)={NULL,Add,Sub,mul,div};
+	printf("请输入两个操作数>:");
+	scanf("%d %d",&x,&y);
+	ret=(p[input])(x,y);
+	printf("%d",ret);
+	
+	return 0;
+}
