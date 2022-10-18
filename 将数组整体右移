@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	int n=0;
+	int m=0;
+	int i=0;
+	char ch=' ';
+	scanf("%d %d",&n,&m);
+	int arr[100];
+	m = m % n;
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for(i=n-m;i<n;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+	for(i=0;i<n-m;i++)
+	{
+		if(i==n-m-1)
+		{
+			ch='\n';
+		}
+		printf("%d%c",arr[i],ch);
+	}
+	return 0;
+}
