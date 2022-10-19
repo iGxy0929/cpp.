@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+void strcat(char *s1,char*s2,int n,int m)
+{	
+	int i=1;
+	s1=s1+n;
+	while(i<=m)
+	{
+		*s1=*s2;
+		s1++;
+		s2++;
+		i++;
+		
+	}
+	
+		
+}
+int main()
+{	
+	int m=0;
+	int n=0;
+	char a[100]={0};
+	char b[100]={0};
+	gets(a);
+	gets(b);
+	n=strlen(a);
+	m=strlen(b);
+	strcat(a,b,n,m);
+	printf("%s",a);
+	return 0;
+}
