@@ -1,0 +1,22 @@
+#include<stdio.h>
+struct stu
+{
+	char a[100];
+	char tel[100];
+	char b[10];
+	
+};
+void print(stu *p)
+{
+	printf("%s\n",p->a);
+	printf("%s\n",p->b);
+	printf("%s\n",p->tel);
+	
+	
+}
+int main()
+{
+	struct stu s={"Kevin Durant","66666666666","男"};
+	print(&s);
+	return 0;
+}
