@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+typedef struct student{
+	char name[100];
+	char tel[100];
+	
+	
+}stu;
+
+int main()
+{
+	stu s1;
+	stu *p;
+	p=&s1;
+	strcpy(p->name,"smith");
+	printf("%s",p->name);
+	return 0;
+}
