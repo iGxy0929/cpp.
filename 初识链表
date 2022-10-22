@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student
+{
+	int sno;
+	struct student* next;
+};
+int main()
+{
+	struct student *phead,*p,*p1;
+	p=(struct student*)malloc(sizeof(struct student));
+	scanf("%d",&p->sno);//链表头 
+	phead=p;
+	phead->next=NULL;
+	for(int i=0;i<8;i++)//八个结点 
+	{
+		p1=(struct student*)malloc(sizeof(struct student));
+		scanf("%d",&p1->sno);
+		p->next=p1;
+		p=p1;
+	}
+	p->next=NULL;
+	for(p=phead;p->next!=NULL;p=p->next)
+	{
+		printf("%d",p->sno);
+	}
+	free(p);
+	return 0;
+}
