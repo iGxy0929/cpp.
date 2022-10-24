@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student
+{
+	int sno;
+	struct student* next;
+};
+int main()
+{
+	struct student *phead,*p,*p1,*q;
+	p=(struct student*)malloc(sizeof(struct student));
+	scanf("%d",&p->sno); 
+	phead=p;
+	phead->next=NULL;
+	for(int i=0;i<8;i++)
+	{	
+		p1=(struct student*)malloc(sizeof(struct student));
+	
+		scanf("%d",&p1->sno);
+		p->next=p1;
+		p=p1;
+	}
+	p->next=NULL;
+	for(p=phead;p->next!=NULL;p=p->next)
+	{
+		printf("%d",p->sno);
+	}
+	printf("%d",p->sno);
+	for(p=phead;p->next!=NULL;p=p->next)
+	{
+		q=p->next;
+		free(p);
+		p=q;
+
+	} 
+	return 0;
+}
