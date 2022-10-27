@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student{
+	int sno;
+	struct student* next;
+	
+};
+void del(struct student*head,int n)
+{
+	student *a;
+	student *b;
+	b=head;
+	int num=0;
+	while(b!=NULL&&num!=n)
+	{
+		num++;
+		a=b;
+		b=b->next;
+	}
+		a->next=b->next;
+					
+		free(b);
+	}
+void plus(student*head,int n)
+{
+	student *a,*b,*c;
+	b=head;
+	a=NULL;
+	int number=0;
+	b->sno=1002;
+	while(b!=NULL&&number<=n)
+	{
+		number++;
+		a=b;
+		b=b->next;
+	}
+	c=(student*)malloc(sizeof(student));
+	a->next=c;
+	c->next=b;
+	c->sno=1002;
+	
+}
+int main()
+{
+	struct student *phead,*p,*q,*w;
+	p=(student*)malloc(sizeof(student));
+	phead=p;
+	phead->next=NULL;
+	for(int i=0;i<3;i++)
+	{
+		q=(student*)malloc(sizeof(student));
+		q->sno=1001+i;
+		p->next=q;
+		p=q;
+	}
+	p->next=NULL;
+	del(phead,2);
+	plus(phead,1);
+	for(p=phead->next;p->next!=NULL;p=p->next)
+	{
+		printf("%d ",p->sno);
+	}
+	printf("%d ",p->sno);
+	p=phead;
+	while(p->next!=NULL)
+	{
+		w=p->next;
+		free(p);
+		p=w;
+	}
+	return 0;
+}
