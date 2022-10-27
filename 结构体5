@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+int maxAge(int *a,int n)
+{
+	int max=0;
+	for(int i=0;i<n;i++)
+	{
+		if(a[i]>max)
+		{
+			max=a[i];
+		}
+		
+	}
+	return max;
+}
+struct student{
+	int sno;
+	char name[20];
+	char gender;
+	int age;
+};
+int main()
+{
+	int n=0;
+	printf("请输入学生的个数：");
+	scanf("%d",&n);
+	int a[n];
+	student *p,*phead;
+	p=(student*)malloc(n*sizeof(student));
+	phead=p;
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&p->age);
+		p++;
+	}
+	p=phead;
+	for(int j=0;j<n;j++)
+	{
+		a[j]=p->age;
+		p++;
+	}
+	int max=0;
+	max =maxAge(a,n);
+	printf("最大年龄为：%d",max);
+	p=phead;
+	free(p);
+	return 0;
+}
