@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct student{
+	int sno;
+	char name[20];
+	char gender;
+	int age;
+};
+void sort(student*p,int n )
+{
+	
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n-i;j++)
+		{
+			if(p->age>(p+1)->age)
+			{
+				int tmp=p->age;
+				p->age=(p+1)->age;
+				(p+1)->age=tmp;
+			
+			}
+			p++;
+		}
+	}
+
+
+}
+int main()
+{
+	int n=0;
+	printf("请输入学生的个数：");
+	scanf("%d",&n);
+	student *p,*phead;
+	p=(student*)malloc(n*sizeof(student));
+
+	phead=p;
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&p->age);
+		p++;
+	}
+	p=phead;
+	sort(p,n);
+	for(int i=0;i<n;i++)
+	{
+		printf("%d ",p->age);
+		p++;
+	}
+	free(p);
+
+	return 0;
+}
