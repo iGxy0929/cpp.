@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student
+{
+	int sno;
+	struct student* next;
+};
+	void plus(student*phead,int n)
+	{
+		student *a,*b,*c;
+		b=phead;
+		a=NULL;
+		int number=0;
+		while(number<=n)
+		{
+			number++;
+			a=b;
+			b=b->next;
+		}
+		c=(student*)malloc(sizeof(student));
+		a->next=c;
+		c->next=b;
+		c->sno=66;
+		
+	}
+int main()
+{
+	int tmp=0;
+	int count =1;
+	struct student *phead,*p,*p1,*q;
+	p=(struct student*)malloc(sizeof(struct student));
+	phead=p;
+	phead->next=NULL;
+	for(int i=0;i<8;i++)
+	{
+		p1=(struct student*)malloc(sizeof(struct student));
+		scanf("%d",&p1->sno);
+		p->next=p1;
+		p=p1;
+
+	}
+	p->next=NULL;
+		printf("请输入指定学号：");
+		scanf("%d",&tmp);
+		p=phead->next;
+		while(1)
+		{	
+			
+			if(p->sno==tmp)
+			{
+				break;
+			}
+			p=p->next;
+			count++;
+		}
+	plus(phead,count);
+	p=phead->next;
+	while(1)
+	{
+		printf("%d ",p->sno);
+			if(p->next==NULL)
+				break;
+		p=p->next;
+	
+	}
+    while(p->next!=NULL)
+	{	
+			q=p->next;
+			free(p);
+			p=q;
+	}
+	
+
+	return 0;
+}
