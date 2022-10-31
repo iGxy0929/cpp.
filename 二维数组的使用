@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+
+    /*********Begin*********/
+    int n=0;
+    scanf("%d",&n);
+    	  int b[n];
+    char arr[n][100];
+    int count[n];
+    getchar();
+    for(int i=0;i<n;i++)
+    {
+    	count [i]=0;
+        gets(arr[i]);
+        
+		        b[i]=strlen(arr[i]);
+		        for(int k=0;k<b[i];k++)
+		        {
+					if(arr[i][k]>=48&&arr[i][k]<=57)
+					{
+						count [i]++;
+					}
+				}
+		  
+    }
+    for(int i=0;i<n;i++)
+    {
+		  printf("%d\n",count[i]);
+	}
+
+
+    /*********End**********/
+    return 0;
+}
