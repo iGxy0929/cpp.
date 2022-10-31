@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[20];
+	char b[20];
+	gets(a);
+	gets(b);
+	int n=strlen(a);
+	int m=strlen(b);
+	int c=0;
+	scanf("%d",&c);
+	int i=0;
+	for(int j=0;j<m;j++)
+	{
+			for(i=n-1;i>=c;i--)
+			{
+				a[i+1]=a[i];
+			}
+			n++;
+	}
+	a[n]='\0';
+	int k=0;
+	for(int j=c,k=0;j<c+m;j++,k++)
+	{
+		a[j]=b[k];
+	}
+    printf("%s",a);
+	return 0;
+}
