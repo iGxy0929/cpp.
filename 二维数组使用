@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include <string.h>
+int main(void)
+{
+    /*********Begin*********/
+    char a[10][100];
+    int b[100]={0};
+    int n=0;
+    int c[100]={0};
+    int m=0;
+    int q=0;
+    int p=0;
+    char d[100];
+    for(int i=0;i<10;i++)
+    {
+        gets(a[i]);
+        b[i]=strlen(a[i]);
+        n=i;
+        if(strcmp(a[i],"stop")==0)
+        {
+			break;
+		}
+    }
+    int h=0;
+    
+    for(int i=0;i<n;i++)
+    {
+    	h=b[i];
+		for(int j=0;j<h;j++)
+		{
+			if(a[i][j]==' ')
+			{
+				b[i]--;
+				
+			}
+			if(a[i][j]!=' ')
+			{
+				c[m]++;
+				
+			}
+			else{
+				m++;
+				q=m;
+			}
+		}
+		int max=c[0];
+		for(int k=0;k<=q;k++)
+		{
+			if(c[k]>max)
+			{
+				max=c[k];
+				p=k;
+			}
+		}
+		int l=0;
+		int o=0;
+		while(o<p)
+		{	
+			l++;
+			if(a[i][l]==' ')
+			{
+				o++;
+			}
+		}
+		int u=0;
+		int y=l;
+		while(a[i][y]!=' ')
+		{
+			d[u]=a[i][y];
+			u++;
+			y++;
+		}
+		d[u]='\0';
+		printf("%d ",b[i]);
+        puts(d);	
+	}
+
+    /*********End**********/
+    return 0;
+}
