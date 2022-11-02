@@ -1,0 +1,129 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student{
+	int sno;
+	student *next;
+};
+void menu()
+{
+	printf("学生管理软件菜单：\n");
+	printf("--------------------\n");
+	printf(" 1-建立链表\n");
+	printf(" 2-遍历链表\n");
+	printf(" 3-删除链表\n");
+	printf(" 4-插入链表\n");
+	printf(" 0-退出\n"); 
+	printf("--------------------\n");
+	printf("选择(0-4)");
+}
+student* createLinkedList(int n)
+{
+	student *phead,*p,*p1;
+	p=(student*)malloc(sizeof(student));
+	phead=p;
+	phead->next=NULL;
+	for(int i=0;i<n;i++)
+	{
+		p1=(student*)malloc(sizeof(student));
+		scanf("%d",&p1->sno);
+		p->next=p1;
+		p=p1;
+	}
+	p->next=NULL;
+	p=phead;
+	return p;
+
+}
+void traversalLinkedList(student*phead)
+{
+	while(1)
+	{
+			phead=phead->next;
+				printf("%d ",phead->sno);
+		if(phead->next==NULL)
+		{
+			break;
+		}
+	
+	
+	}
+}
+student*deleteLinkedList(student*phead)
+{
+	student *a,*b,*c;
+	b=phead;
+	int number=0;
+	printf("请输入学号：");
+	scanf("%d",&number);
+	for(;;)
+	{
+		a=b;
+		b=b->next;
+		if(b->sno==number)
+		{
+			a->next=b->next;
+			free(b);
+			break;
+		}
+	}
+	c=phead;
+	return c;
+}
+student*insertLinkedList(student*phead,student*w)
+{
+	student*a,*b,*c;
+	b=phead;
+	a=NULL;
+	a=b;
+	b=b->next;
+	c=(student*)malloc(sizeof(student));
+	c=w;
+	a->next=c;
+	c->next=b;
+	return b;
+}
+
+int main()
+{
+	menu();
+	int n=0;
+	int a=0;
+	printf("请选择："); 
+	scanf("%d",&a);
+	if(a==0)
+	{
+		return 0;
+	}
+	printf("请输入节点的个数：");
+	scanf("%d",&n);
+	student *p,*q,*w;
+	w=(student*)malloc(sizeof(student));
+	w->sno=66;
+	q=NULL;
+	switch (a)
+	{
+		case 1:
+			p=createLinkedList(n);
+			break;
+		case 2:
+			p=createLinkedList(n);
+			traversalLinkedList(p);	
+			break;
+		case 3:
+			p=createLinkedList(n);
+			p=deleteLinkedList(p);
+			break;
+		case 4:
+			p=createLinkedList(n);
+			insertLinkedList(p,w);
+			break;
+		
+	}
+	while(p->next!=NULL)
+	{
+		q=p->next;
+		free(p);
+		p=q;
+	}
+	return 0;
+}
