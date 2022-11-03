@@ -1,0 +1,23 @@
+#include<stdio.h>
+int a(int x)
+{
+	int n=0;
+	if(x<=2)
+	{
+		return x;
+	}
+	else
+	{
+		n=a(x-1)+a(x-2);
+		return n;
+	}
+}
+int main()
+{
+	int k=0;
+	scanf("%d",&k);
+	int count =0;
+	count=a(k);
+	printf("%d",count);
+	return 0;
+}
