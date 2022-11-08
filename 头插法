@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Student{
+	int sno;
+	char name[20];
+	char gender;
+	int age;
+};
+struct Node{
+	Student data;
+	Node *next;
+};
+Node *create(int n)
+{
+	Node *p,*phead,*p1;
+	p=(Node*)malloc(sizeof(Node));
+	phead=p;
+	p->next=NULL;
+	for(int i=0;i<n;i++)
+	{
+		p1=(Node*)malloc(sizeof(Node));
+		scanf("%d",&p1->data.sno);
+		p1->next=p->next;
+		p->next=p1;
+	}
+	return phead;
+	
+}
+int main()
+{
+	int n=0;
+	printf("请输入学生的个数：");
+	scanf("%d",&n);
+	Node*p,*phead,*q;
+	phead=create(n);
+	p=phead->next;
+		while(1)
+		{
+			printf("%d",p->data.sno);
+			if(p->next==NULL)
+			
+			{
+				break;
+			}
+			p=p->next;
+		}
+		p=phead;
+		while(1)
+		{
+			q=p->next;
+			free(p);
+			p=q;
+			if(p->next==NULL)
+			{
+				break;
+			}
+		}	
+	
+	return 0;
+}
