@@ -1,0 +1,111 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Student{
+	int sno;
+	char name[20];
+	char gender;
+	int age;
+};
+struct Node{
+	void* data;
+	Node *next;
+};
+Node *createLinkList(int);
+void printstudent(Node*);
+void printfallstudent(Node*);
+void delstudent(Node*,int);
+int main()
+{	
+	int n=0;
+	printf("请输入学生的个数：");
+	scanf("%d",&n);
+	Node *phead,*p,*q;
+	phead=createLinkList(n);
+	p=phead->next;
+	int sno1;
+	printf("请输入删除学生的学号：");
+	scanf("%d",&sno1);
+	delstudent(p,sno1);
+	printfallstudent(p);
+	p=phead;
+	while(1)
+	{
+		q=p->next;
+		free(p);
+		p=q;
+		if(p->next==NULL)
+		break;
+	}
+	
+	return 0;
+}
+Node *createLinkList(int n)
+{	
+		Node *phead,*p,*p1;
+		p=(Node*)malloc(sizeof(Node));
+		p->data=(Student*)(p->data);
+		phead=p;
+		p->next=NULL;
+		for(int i=0;i<n;i++)
+		{
+			p1=(Node*)malloc(sizeof(Node));
+	
+			p1->data=(Student*)malloc(sizeof(Student));
+			Student* s=(Student*)p1->data;
+			printf("请输入第%d个学生的年龄、姓名、性别、学号：",i+1);
+			scanf("%d",&(s->age));
+			fflush(stdin);
+			gets(s->name);
+					s->gender=getchar();
+			scanf("%d",&(s->sno));
+		
+			p1->next=p->next;
+			p->next=p1;	
+		}
+		return phead;	
+}
+void printstudent(Node*p)
+{
+	Student *s=(Student*)p->data;
+	printf("%d\t%s\t",s->sno,s->name);
+	printf("%c\t%d\n",s->gender,s->age);
+	
+}
+void printfallstudent(Node*phead)
+{
+	Node*p=phead;
+	printf("学号\t姓名\t性别\t年龄：\n");
+	while(p)
+	{
+		printstudent(p);
+		p=p->next;
+	}
+}
+void delstudent(Node*phead,int sno1)
+{
+	Node *p;
+	Node *a,*b;
+	for(p=phead;p->next!=NULL;p=p->next)
+	{	
+				Student *s=(Student*)p->data;
+			b=p;
+				
+					if(s->sno==sno1)
+					{
+						a->next=b->next;
+						free(b);
+						break;
+					}
+					a=p;
+	}
+	Student *s=(Student*)p->data;
+	b=p;
+		
+		if(s->sno==sno1)
+						{
+							a->next=b->next;
+							free(b);
+						}
+	
+	
+}
