@@ -1,0 +1,69 @@
+#include<stdio.h>
+int main() {
+	int n1, n2, n, len1, len2, len;
+	int array1[100], array2[100], array[200];
+	scanf("%d",&n1);
+int i=0;
+int j=0;
+	for (i = 0; i<n1; i++) {
+		scanf("%d",&array1[i]);
+	}
+	scanf("%d",&n2);
+	for (j = 0; j<n2; j++) {
+		scanf("%d",&array2[j]);
+	}
+
+	n = n1 + n2;
+	len1 = n1 - 1;
+	len2 = n2 - 1;
+	len = n - 1;
+
+	while (len1 >= 0 && len2 >= 0) {
+		if (array1[len1]<array2[len2]) {
+			array[len] = array1[len1];
+			len--;
+			len1--;
+		}
+		else {
+			array[len] = array2[len2];
+			len--;
+			len2--;
+		}
+	}
+
+	while (len1 >= 0) {
+		array[len] = array1[len1];
+		len--;
+		len1--;
+	}
+
+	while (len2 >= 0) {
+		array[len] = array2[len2];
+		len--;
+		len2--;
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(array[i]==array[j])
+			array[j]=0;
+		}
+	}
+		for(i=0;i<n-1;i++)
+		{
+			for(j=0;j<n-i-1;j++)
+			{
+				if(array[j]<array[j+1])
+				{
+					int	tmp=array[j+1];
+					array[j+1]=array[j];
+					array[j]=tmp;
+				}
+			}
+		}
+	for (i = 0; i<n; i++) {
+		if(array[i]!=0)
+		printf("%d ",array[i]);
+	}
+}
