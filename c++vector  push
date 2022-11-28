@@ -1,0 +1,38 @@
+#include<iostream>
+#include<istream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a[11];
+	for(int i=0;i<10;i++)
+	{
+		cin>>a[i];
+	}
+	int count=a[0];
+	int num=0;
+	vector <int>b;
+	for(int i=0;i<10;i++)
+	{
+		while(a[i]!=0)
+		{
+			b.push_back(i);
+			num++;
+			a[i]--;
+		}
+		
+	}
+	sort(b.begin(),b.end());
+	cout<<b[count];
+	for(int i=0;i<num;i++)
+	{
+		if(i!=count)
+		{
+			cout<<b[i];
+		}
+	}
+	
+	
+	return 0;
+}
