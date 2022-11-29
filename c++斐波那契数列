@@ -1,0 +1,27 @@
+#include<iostream>
+
+using namespace std;
+const int a=10007;
+
+long long fb(int n);
+int main()
+{
+int n;
+cin>>n;
+cout<<fb(n);
+return 0;
+}
+long long fb(int n)
+{
+	long int a=1;
+	long int b=1;
+	long int c=1;
+	while(n>2)
+	{
+		c=a+b;
+		a=b%10007;
+		b=c%10007;
+		n--;
+	}
+	return c%10007;
+}
